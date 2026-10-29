@@ -1,3 +1,55 @@
+[project]
+name = "python-practice"
+version = "0.1.0"
+authors = [ {name = "Md. Maruf Al Alif Khan", email = "maruf.alif03@gmail.com"} ]
+readme = "README.md"
+requires-python = ">=3.12"
+
+[tool.poetry]
+package-mode = false
+
 [tool.pytest.ini_options]
 pythonpath = ["src"]
 testpaths = ["tests"]
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^9.1.1"
+pytest-benchmark = "^5.3.0"
+pytest-cov = "^7.1.0"
+pytest-xdist = "^3.8.0"
+mypy = "^2.4.1"
+black = "^26.10.1"
+isort = "^9.0.2"
+flake8 = "^7.5.0"
+flake8-pyproject = "^1.2.4"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 88
+target-version = ['py312']
+include = '\.pyi?'
+
+[tool.isort]
+profile = "black"
+line_length = 88
+skip_gitignore = true
+
+[tool.flake8]
+max-line-length = 88
+extend-ignore = ["E203", "W503"]
+exclude = [
+    ".git",
+    "__pycache__",
+    ".venv",
+    "build",
+    "dist"
+]
+
+[tool.mypy]
+python_version = "3.12"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true

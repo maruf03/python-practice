@@ -1,9 +1,12 @@
 import pytest
-from queue import Queue, Queue2
+
+from containers.queue import Queue, Queue2
+
 
 @pytest.fixture
 def empty_queue():
     return Queue()
+
 
 @pytest.fixture
 def empty_queue2():

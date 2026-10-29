@@ -1,6 +1,7 @@
 from typing import List
 
-def merge(left: List, right: List)->List:
+
+def merge(left: List, right: List) -> List:
     l = 0
     r = 0
     res = []
@@ -17,8 +18,9 @@ def merge(left: List, right: List)->List:
         res.extend(right[r:])
     return res
 
-def merge_sort(l: List)->List:
+
+def merge_sort(l: List) -> List:
     if len(l) <= 1:
         return l
     n = len(l)
-    return merge(merge_sort(l[:n//2]), merge_sort(l[n//2:]))
+    return merge(merge_sort(l[: n // 2]), merge_sort(l[n // 2 :]))
